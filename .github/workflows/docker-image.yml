@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-image-autobuild:$(date +%s)
+      run: docker build . --file Dockerfile --tag alphax123/docker-image-autobuild:latest
     - name: Push the Docker image
-      run: docker login -u alphax123 -p ${{ secrets.DOCKER_TOKEN }} && docker push alphax123/docker-image-autobuild:$(date +%s)
+      run: docker login -u ijn35807 -p ${{ secrets.DOCKER_TOKEN }} && docker push alphax123/docker-image-autobuild:latest
